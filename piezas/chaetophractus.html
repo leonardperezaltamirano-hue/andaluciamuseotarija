@@ -80,8 +80,8 @@
             border-top: 5px solid var(--secondary-color);
         }
 
-        /* Contenedor del GIF */
-        .gif-container {
+        /* Contenedor del video */
+        .video-container {
             width: 100%;
             padding: 20px 0;
             background-color: #f1ede4;
@@ -90,12 +90,13 @@
             align-items: center;
         }
 
-        /* Tamaño pequeño para el GIF */
-        .gif-img {
-            width: 200px;
+        /* Tamaño pequeño y estilo del video */
+        .video-player {
+            width: 240px;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            object-fit: cover;
         }
 
         .content {
@@ -148,8 +149,11 @@
 
     <div class="container">
         <article class="exhibit-detail">
-            <div class="gif-container">
-                <img src="../imagenes/a.gif" alt="Chaetophractus Nationi GIF" class="gif-img" onerror="this.src='https://via.placeholder.com/200x200?text=a.gif'">
+            <div class="video-container">
+                <video class="video-player" autoplay loop muted playsinline>
+                    <source src="../imagenes/armadillo.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video HTML5.
+                </video>
             </div>
 
             <div class="content">
