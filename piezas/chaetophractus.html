@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaetophractus Nationi | Museo Paleontológico</title>
+    <style>
+        :root {
+            --primary-color: #8b2626;
+            --secondary-color: #d97736;
+            --bg-color: #f8f6f0;
+            --card-bg: #ffffff;
+            --text-color: #2c2c2c;
+            --accent-color: #4a5d4e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #5a1818);
+            color: white;
+            padding: 1.2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .lang-switch {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background-color: #b85e24;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .exhibit-detail {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .image-container {
+            width: 100%;
+            max-height: 450px;
+            overflow: hidden;
+            background-color: #e0e0e0;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .student-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+
+        .lang-en {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="nav-btn" class="lang-es">← Volver al inicio</a>
+        <button class="lang-switch" onclick="toggleLanguage()">Switch to English 🌐</button>
+    </header>
+
+    <div class="container">
+        <article class="exhibit-detail">
+            <div class="image-container">
+                <img src="../imagenes/chaetophractus.jpg" alt="Chaetophractus Nationi" onerror="this.src='https://via.placeholder.com/800x450?text=Imagen+Chaetophractus'">
+            </div>
+
+            <div class="content">
+                <span class="student-badge">Investigador: Andrés Rocabado</span>
+
+                <div class="lang-es">
+                    <h1>Chaetophractus Nationi (Quirquincho Andino)</h1>
+                    <p>
+                        El <strong>Chaetophractus nationi</strong>, conocido comúnmente como Quirquincho Andino, es un mamífero autóctono perteneciente al orden Cingulata y a la familia Chlamyphoridae.
+                    </p>
+                    <p>
+                        Con un peso de hasta 8 kg y una longitud entre 25 y 50 cm, destaca por su caparazón córneo articulado por placas óseas recubiertas de queratina. Presenta patas robustas con garras adaptadas para excavar en suelos áridos del altiplano y valles interandinos.
+                    </p>
+                </div>
+
+                <div class="lang-en">
+                    <h1>Chaetophractus Nationi (Andean Armadillo)</h1>
+                    <p>
+                        <strong>Chaetophractus nationi</strong>, commonly known as the Andean Armadillo, is a native mammal belonging to the order Cingulata and the family Chlamyphoridae.
+                    </p>
+                    <p>
+                        Weighing up to 8 kg and measuring between 25 and 50 cm in length, it is distinguished by its horny carapace articulated by bony plates covered in keratin. It features robust legs equipped with claws adapted for digging in the arid soils of the highlands and Inter-Andean valleys.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p>© 2026 Museo Paleontológico Local - Tarija, Bolivia</p>
+    </footer>
+
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            const esElements = document.querySelectorAll('.lang-es');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.querySelector('.lang-switch');
+
+            if (currentLang === 'es') {
+                esElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                btn.textContent = 'Cambiar a Español 🌐';
+                currentLang = 'en';
+            } else {
+                esElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                btn.textContent = 'Switch to English 🌐';
+                currentLang = 'es';
+            }
+        }
+    </script>
+</body>
+</html>
