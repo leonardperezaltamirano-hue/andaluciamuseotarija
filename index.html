@@ -104,14 +104,13 @@
             align-items: center;
         }
 
-        .card-img, .card-video {
+        .card-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        .exhibit-card:hover .card-img,
         .exhibit-card:hover .card-video {
             transform: scale(1.04);
         }
@@ -182,7 +181,7 @@
     <div class="container">
         <div class="museum-grid">
 
-            <!-- PIEZA 1: Chaetophractus Nationi (VIDEO MP4 EN BUCLE) -->
+            <!-- PIEZA 1: Chaetophractus Nationi -->
             <a href="piezas/chaetophractus.html" class="card-link">
                 <article class="exhibit-card">
                     <div class="card-img-container">
@@ -213,7 +212,10 @@
             <a href="piezas/hombre-san-luis.html" class="card-link">
                 <article class="exhibit-card">
                     <div class="card-img-container">
-                        <img src="imagenes/hombresl.mp4" alt="Hombre de San Luis" class="card-img" onerror="this.src='https://via.placeholder.com/600x400?text=Hombre+de+San+Luis'">
+                        <video class="card-video" autoplay loop muted playsinline>
+                            <source src="imagenes/hombresl.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
                     </div>
                     <div class="card-body">
                         <span class="student-badge">Investigador: Andrés Rocabado</span>
@@ -237,7 +239,10 @@
             <a href="piezas/armas-combate.html" class="card-link">
                 <article class="exhibit-card">
                     <div class="card-img-container">
-                        <img src="imagenes/armas-combate.jpg" alt="Armas de Combate" class="card-img" onerror="this.src='https://via.placeholder.com/600x400?text=Armas+de+Combate'">
+                        <video class="card-video" autoplay loop muted playsinline>
+                            <source src="imagenes/armas-combate.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
                     </div>
                     <div class="card-body">
                         <span class="student-badge">Investigadora: Ariana Conde</span>
@@ -261,7 +266,10 @@
             <a href="piezas/yicas-tobas.html" class="card-link">
                 <article class="exhibit-card">
                     <div class="card-img-container">
-                        <img src="imagenes/yicas-tobas.jpg" alt="Yicas Tradicionales" class="card-img" onerror="this.src='https://via.placeholder.com/600x400?text=Yicas+Tradicionales'">
+                        <video class="card-video" autoplay loop muted playsinline>
+                            <source src="imagenes/yicas-tobas.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
                     </div>
                     <div class="card-body">
                         <span class="student-badge">Investigadora: Malena Vargas</span>
@@ -285,7 +293,10 @@
             <a href="piezas/gliptodonte.html" class="card-link">
                 <article class="exhibit-card">
                     <div class="card-img-container">
-                        <img src="imagenes/gliptodonte.jpg" alt="Gliptodonte" class="card-img" onerror="this.src='https://via.placeholder.com/600x400?text=Gliptodonte'">
+                        <video class="card-video" autoplay loop muted playsinline>
+                            <source src="imagenes/gliptodonte.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
                     </div>
                     <div class="card-body">
                         <span class="student-badge">Investigadora: Camila Solares</span>
@@ -309,7 +320,10 @@
             <a href="piezas/bolivianita.html" class="card-link">
                 <article class="exhibit-card">
                     <div class="card-img-container">
-                        <img src="imagenes/bolivianita.jpg" alt="Bolivianita" class="card-img" onerror="this.src='https://via.placeholder.com/600x400?text=Bolivianita'">
+                        <video class="card-video" autoplay loop muted playsinline>
+                            <source src="imagenes/bolivianita.mp4" type="video/mp4">
+                            Tu navegador no soporta el formato de video.
+                        </video>
                     </div>
                     <div class="card-body">
                         <span class="student-badge">Investigadora: Zaira Silva</span>
@@ -333,7 +347,7 @@
     </div>
 
     <footer>
-        <p>© 2026 Colegio Andalucía - Tarija, Bolivia</p>
+        <p>© 2026 Museo Paleontológico y Arqueológico - Tarija, Bolivia</p>
     </footer>
 
     <script>
