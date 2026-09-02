@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Paleontológico y Arqueológico de Tarija</title>
+    <style>
+        :root {
+            --primary-color: #8b2626;
+            --secondary-color: #d97736;
+            --bg-color: #f8f6f0;
+            --card-bg: #ffffff;
+            --text-color: #2c2c2c;
+            --accent-color: #4a5d4e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #5a1818);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 5px 0 15px 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .lang-switch {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background-color: #b85e24;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .museum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .exhibit-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 4px solid var(--secondary-color);
+        }
+
+        .exhibit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #e0e0e0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .student-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-title {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .card-text {
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c2c2c;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.85rem;
+        }
+
+        /* Ocultamiento para selector de idioma */
+        .lang-en {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="lang-es">Museo Paleontológico y Arqueológico</h1>
+        <h1 class="lang-en">Paleontological and Archaeological Museum</h1>
+        <p class="lang-es">Colección Guiada por Estudiantes | Tarija, Bolivia</p>
+        <p class="lang-en">Student Guided Collection | Tarija, Bolivia</p>
+        <button class="lang-switch" onclick="toggleLanguage()">Switch to English 🌐</button>
+    </header>
+
+    <div class="container">
+        <div class="museum-grid">
+
+            <article class="exhibit-card" id="chaetophractus">
+                <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="Chaetophractus Nationi" class="card-img">
+                <div class="card-body">
+                    <span class="student-badge">Investigador: Andrés Rocabado</span>
+                    
+                    <div class="lang-es">
+                        <h2 class="card-title">Chaetophractus Nationi (Quirquincho Andino)</h2>
+                        <p class="card-text">
+                            Mamífero autóctono perteneciente al orden Cingulata y a la familia Chlamyphoridae. Con un peso de hasta 8 kg y una longitud de entre 25 y 50 cm, destaca por su caparazón córneo articulado por placas óseas recubiertas de queratina. Presenta patas robustas con garras para excavar en suelos áridos del altiplano y valles interandinos.
+                        </p>
+                    </div>
+
+                    <div class="lang-en">
+                        <h2 class="card-title">Chaetophractus Nationi (Andean Armadillo)</h2>
+                        <p class="card-text">
+                            A native mammal belonging to the order Cingulata and family Chlamyphoridae. Weighing up to 8 kg and measuring between 25 and 50 cm, it is distinguished by its horny carapace articulated by bony plates covered in keratin. It features robust legs equipped with claws for digging in arid highland soils.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="exhibit-card" id="hombre-san-luis">
+                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80" alt="Hombre de San Luis" class="card-img">
+                <div class="card-body">
+                    <span class="student-badge">Investigador: Andrés Rocabado</span>
+                    
+                    <div class="lang-es">
+                        <h2 class="card-title">El Hombre de San Luis</h2>
+                        <p class="card-text">
+                            El hallazgo osteológico humano más antiguo registrado en Bolivia (datado entre 9,430 y 7,695 años). Descubierto en 1987 en el barrio San Luis de Tarija, corresponde a un individuo masculino adulto del Periodo Arcaico de aproximadamente 1.64 metros de estatura.
+                        </p>
+                    </div>
+
+                    <div class="lang-en">
+                        <h2 class="card-title">The Man of San Luis</h2>
+                        <p class="card-text">
+                            The oldest human osteological find recorded in Bolivia, dating between 9,430 and 7,695 years ago. Discovered in 1987 in Tarija, it corresponds to an adult male from the Archaic Period, measuring approximately 1.64 meters in height.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="exhibit-card" id="armas-inca">
+                <img src="https://images.unsplash.com/photo-1599751449128-ec71888ada76?auto=format&fit=crop&w=600&q=80" alt="Armas de combate" class="card-img">
+                <div class="card-body">
+                    <span class="student-badge">Investigadora: Ariana Conde</span>
+                    
+                    <div class="lang-es">
+                        <h2 class="card-title">Armas de Combate y Hachas de Piedra</h2>
+                        <p class="card-text">
+                            Durante el Horizonte Tardío (1450-1550), en la región de Tarija, los pueblos relacionados con la expansión incaica utilizaron herramientas y armas de piedra tallada y pulida (hachas, rompecabezas o porras) reflejando técnicas militares avanzadas.
+                        </p>
+                    </div>
+
+                    <div class="lang-en">
+                        <h2 class="card-title">Set of Combat Weapons & Stone Axes</h2>
+                        <p class="card-text">
+                            During the Late Horizon (1450–1550) in Tarija, communities tied to Inca expansion used carved and polished stone tools and weapons (mace-heads and axes) reflecting specialized stoneworking and military practices.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="exhibit-card" id="yicas">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd850d97f1d?auto=format&fit=crop&w=600&q=80" alt="Yicas Tradicionales" class="card-img">
+                <div class="card-body">
+                    <span class="student-badge">Investigadora: Malena Vargas</span>
+                    
+                    <div class="lang-es">
+                        <h2 class="card-title">Yicas Tradicionales</h2>
+                        <p class="card-text">
+                            Manifestación artesanal originaria de la tribu de los Tobas en Entre Ríos, Tarija. Tejidas con fibras de caraguatá e integradas con pequeñas perlas coloridas, estas bolsas tradicionales mantienen viva la estética y textura cultural de la región.
+                        </p>
+                    </div>
+
+                    <div class="lang-en">
+                        <h2 class="card-title">Traditional "Yicas"</h2>
+                        <p class="card-text">
+                            Handcrafted creations from the Toba tribe in Entre Ríos, Tarija. Woven with strong caraguatá fibers and decorated with small colorful beads, these traditional pouches keep the distinct cultural aesthetic of the region alive.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="exhibit-card" id="gliptodonte">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Gliptodonte" class="card-img">
+                <div class="card-body">
+                    <span class="student-badge">Investigadora: Camila Solares</span>
+                    
+                    <div class="lang-es">
+                        <h2 class="card-title">Gliptodonte</h2>
+                        <p class="card-text">
+                            Mamífero prehistórico gigante emparentado con los armadillos. Destacaba por su gran caparazón rígido formado por placas óseas y una cola fuerte defensiva. Habitó las llanuras y pastizales sudamericanos.
+                        </p>
+                    </div>
+
+                    <div class="lang-en">
+                        <h2 class="card-title">Glyptodont</h2>
+                        <p class="card-text">
+                            A giant prehistoric mammal related to modern armadillos. It featured a massive dome shell made of bony plates and a strong tail used for defense in South American grasslands.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="exhibit-card" id="bolivianita">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Bolivianita" class="card-img">
+                <div class="card-body">
+                    <span class="student-badge">Investigadora: Zaira Silva</span>
+                    
+                    <div class="lang-es">
+                        <h2 class="card-title">Bolivianita: El Corazón Bicolor</h2>
+                        <p class="card-text">
+                            Gema natural (ametrino) combinación única de amatista (violeta) y citrino (amarillo) en un mismo cristal de cuarzo. Procede principalmente de la mina Anahí en Santa Cruz y es un emblema geológico de Bolivia.
+                        </p>
+                    </div>
+
+                    <div class="lang-en">
+                        <h2 class="card-title">Bolivianite: Bolivia's Bicolor Heart</h2>
+                        <p class="card-text">
+                            A unique natural gem (ametrine) combining violet amethyst and yellow citrine within a single quartz crystal. Sourced from the Anahí mine in Santa Cruz, it is a flagship mineral of Bolivia.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Museo Paleontológico Local | Trabajo de Investigación Estudiantil</p>
+    </footer>
+
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            const esElements = document.querySelectorAll('.lang-es');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.querySelector('.lang-switch');
+
+            if (currentLang === 'es') {
+                esElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                btn.textContent = 'Cambiar a Español 🌐';
+                currentLang = 'en';
+            } else {
+                esElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                btn.textContent = 'Switch to English 🌐';
+                currentLang = 'es';
+            }
+        }
+    </script>
+</body>
+</html>
