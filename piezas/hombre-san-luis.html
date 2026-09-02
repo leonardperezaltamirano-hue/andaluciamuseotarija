@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Hombre de San Luis | Museo Paleontológico</title>
+    <style>
+        :root {
+            --primary-color: #8b2626;
+            --secondary-color: #d97736;
+            --bg-color: #f8f6f0;
+            --card-bg: #ffffff;
+            --text-color: #2c2c2c;
+            --accent-color: #4a5d4e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #5a1818);
+            color: white;
+            padding: 1.2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .lang-switch {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background-color: #b85e24;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .exhibit-detail {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        .video-container {
+            width: 100%;
+            padding: 20px 0;
+            background-color: #f1ede4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-player {
+            width: 240px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .student-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+
+        .lang-en {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="nav-btn">← Volver al inicio</a>
+        <button class="lang-switch" onclick="toggleLanguage()">Switch to English 🌐</button>
+    </header>
+
+    <div class="container">
+        <article class="exhibit-detail">
+            <div class="video-container">
+                <video class="video-player" autoplay loop muted playsinline>
+                    <source src="../imagenes/hombresl.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video HTML5.
+                </video>
+            </div>
+
+            <div class="content">
+                <span class="student-badge">Investigador: Andrés Rocabado</span>
+
+                <!-- Idioma Español -->
+                <div class="lang-es">
+                    <h1>El Hombre de San Luis</h1>
+                    <p>
+                        El <strong>Hombre de San Luis</strong> constituye el hallazgo osteológico humano más antiguo registrado en Bolivia. Los fechados radicarbónicos ubican estos restos en un rango cronológico aproximado de 9.430 a 7.695 años antes del presente (AP), correspondientes al periodo Holoceno Temprano a Medio.
+                    </p>
+                    <p>
+                        Descubierto en la cuenca de Tarija (zona de San Luis), este individuo aporta evidencia fundamental sobre los primeros cazadores-recolectores que poblaron los valles interandinos del sur boliviano, ofreciendo claves sobre las prácticas de inhumación y las dietas prehistóricas en la región.
+                    </p>
+                </div>
+
+                <!-- Idioma Inglés -->
+                <div class="lang-en">
+                    <h1>The Man of San Luis</h1>
+                    <p>
+                        <strong>The Man of San Luis</strong> represents the oldest human osteological discovery recorded in Bolivia. Radiocarbon dating places these remains in a chronological range from approximately 9,430 to 7,695 years before present (BP), corresponding to the Early to Middle Holocene period.
+                    </p>
+                    <p>
+                        Discovered in the Tarija basin (San Luis area), this individual provides crucial evidence regarding the earliest hunter-gatherers who inhabited the southern inter-Andean valleys of Bolivia, offering key insights into prehistoric burial practices and diets in the region.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p>© 2026 Museo Paleontológico Local - Tarija, Bolivia</p>
+    </footer>
+
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            const esElements = document.querySelectorAll('.lang-es');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.querySelector('.lang-switch');
+
+            if (currentLang === 'es') {
+                esElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                btn.textContent = 'Cambiar a Español 🌐';
+                currentLang = 'en';
+            } else {
+                esElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                btn.textContent = 'Switch to English 🌐';
+                currentLang = 'es';
+            }
+        }
+    </script>
+</body>
+</html>
